@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <math.h>
 
 #define MAX_DEPTH 10
 float BINS[11] = { 0,6,7,8,9,10,12,15,20,30,50};
@@ -202,7 +203,7 @@ struct Tree {
 			other->neighbors.push_back(this);
 		}
 		else {
-			// Leaf nóde of this tree found, find neighboring leaf nodes of other tree
+			// Leaf nï¿½de of this tree found, find neighboring leaf nodes of other tree
 			other->join_tree(this);
 		}
 	}
@@ -246,9 +247,9 @@ int main() {
 		}
 	}
 
-	//std::cout << sizeof(Tree);
-	//std::cout << sizeof(Point);
-	//std::cout << sizeof(BBox);
+	std::cout << sizeof(Tree) << std::endl;
+	std::cout << sizeof(Point) << std::endl;
+	std::cout << sizeof(BBox) << std::endl;
 
 	for (auto & r : roots) {
 		r->finish_inserts();
@@ -266,6 +267,6 @@ int main() {
 	}
 	roots.clear();
 
-	std::cout << (unsigned int)std::time(nullptr) - t0;
-	std::cout << "Finished inserting points!";
+	std::cout << (unsigned int)std::time(nullptr) - t0 << std::endl;
+	std::cout << "Finished inserting points!" << std::endl;
 }
